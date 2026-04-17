@@ -1,0 +1,30 @@
+name: Pipeline Cotacoes
+
+on:
+  schedule:
+    # Roda todos os dias de segunda a sexta às 08:00 BRT (11:00 UTC)
+    - cron: "0 11 * * 1-5"
+  workflow_dispatch: # Permite um botão de "Play" manual na interface do GitHub
+
+jobs:
+  executar-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar gerenciador uv e Python
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.13"
+
+      - name: Sincronizar dependencias
+        run: uv sync
+
+      - name: Executar orquestrador
+        env:
+          # Injeta os segredos configurados no repositório diretamente no ambiente
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+        run: uv run main.py
