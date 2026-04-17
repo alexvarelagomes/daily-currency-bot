@@ -2,7 +2,7 @@ name: Pipeline Cotacoes
 
 on:
   schedule:
-    # Roda todos os dias de segunda a sexta às 08:00 BRT (11:00 UTC)
+    # Roda todos os dias de segunda a sexta às 11h.
     - cron: "0 11 * * 1-5"
   workflow_dispatch: # Permite um botão de "Play" manual na interface do GitHub
 
