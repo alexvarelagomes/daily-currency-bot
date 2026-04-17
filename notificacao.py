@@ -1,7 +1,7 @@
 import requests
-from logger import loggers
+from logger import obter_logger
 
-log = loggers(__name__)
+log = obter_logger(__name__)
 
 def enviar_telegram(cotacoes: dict, token: str, chat_id: str) -> bool:
     

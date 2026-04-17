@@ -1,6 +1,6 @@
 import logging
 
-def loggers(modulo):
+def obter_logger(modulo):
 
     logger = logging.getLogger(modulo)
     
