@@ -1,19 +1,16 @@
 import requests
+from logger import loggers
 
-class CotacaoMoedaConverter:
-    def __init__(self):
-        pass
+log = loggers(__name__)
 
-    def buscar_cotacoes(self):
+def buscar_cotacoes():
 
-        url = "https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL"
+    url = "https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL"
 
-        response = requests.get(url)
+    try:
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()  # Verifica se a requisição foi bem-sucedida
         
-        if response.status_code != 200:
-            raise ValueError("Erro ao buscar cotações")
-        
-        # Dicionário em Python
         dados = response.json()
         
         # Convertendo a string que a API devolve para número decimal
@@ -24,3 +21,7 @@ class CotacaoMoedaConverter:
         }
         
         return cotacoes
+    
+    except requests.exceptions.RequestException as e:
+        log.error(f"Falha na comunicação com a AwesomeAPI: {e}")
+        return None
