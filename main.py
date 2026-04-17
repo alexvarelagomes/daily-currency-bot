@@ -1,9 +1,11 @@
-from cotacao import CotacaoMoedaConverter
+from cotacao import buscar_cotacoes
+from logger import loggers
+
+log = loggers(__name__)
 
 if __name__ == "__main__":
-    conversor = CotacaoMoedaConverter()
-    valores_hoje = conversor.buscar_cotacoes()
+    valores_hoje = buscar_cotacoes()
 
     if valores_hoje:
         for moeda, valor in valores_hoje.items():
-            print(f"{moeda}: R$ {valor:.2f}")
+            log.info(f"{moeda}: R$ {valor:.2f}")
