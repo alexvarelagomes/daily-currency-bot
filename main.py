@@ -2,14 +2,14 @@ from cotacao import buscar_cotacoes
 from notificacao import enviar_telegram
 import os
 from dotenv import load_dotenv
-from logger import loggers
+from logger import obter_logger
 
 load_dotenv()
 
 token_telegram = os.getenv("TELEGRAM_BOT_TOKEN")
 chat_id = os.getenv("CHAT_ID")
 
-log = loggers(__name__)
+log = obter_logger(__name__)
 
 if __name__ == "__main__":
     valores_hoje = buscar_cotacoes()
