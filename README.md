@@ -13,7 +13,7 @@ O fluxo de execução é direto e modularizado:
 3. **Load / Notify:** Disparo de requisição POST via Telegram Bot API para entregar a informação formatada.
 4. **Automation:** Orquestração diária na nuvem utilizando GitHub Actions, sem dependência de máquina local.
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 * **Python 3.13**
 * **Requests** (Comunicação HTTP)
@@ -22,17 +22,9 @@ O fluxo de execução é direto e modularizado:
 * **Telegram Bot API** (Interface de entrega)
 * **GitHub Actions** (Automação e agendamento via Cron)
 
-## 📱 Prova de Execução
+## Prova de Execução
 
 Abaixo está a demonstração do pipeline em funcionamento, entregando o resumo financeiro diário:
 
 ![Demonstração do Bot no Telegram](assets/print_telegram.png)
 
-## ⚙️ Como Executar Localmente
-
-Caso queira clonar e rodar o projeto na sua máquina, siga os passos abaixo:
-
-**1. Clone o repositório**
-```bash
-git clone [https://github.com/SEU_USUARIO/daily-currency-converter.git](https://github.com/SEU_USUARIO/daily-currency-converter.git)
-cd daily-currency-converter
