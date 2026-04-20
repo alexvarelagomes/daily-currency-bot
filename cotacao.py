@@ -26,7 +26,7 @@ def buscar_cotacoes(tentativas=3, atraso=5):
         
         except requests.exceptions.HTTPError as e:
             if response.status_code == 429:  # Limite de requisições atingido
-                log.warning(f"Limite de requisições atingido. Tentativa {tentativa} de {tentativas}. Aguardando {atraso} segundos antes de tentar novamente.")
+                log.warning(f"Tentativa {tentativa} de {tentativas}. Aguardando {atraso} segundos antes de tentar novamente.")
                 time.sleep(atraso)
             else:
                 log.error(f"Erro HTTP: {e}")
