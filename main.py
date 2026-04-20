@@ -1,6 +1,7 @@
 from cotacao import buscar_cotacoes
 from notificacao import enviar_telegram
 import os
+import sys
 from dotenv import load_dotenv
 from logger import obter_logger
 
@@ -24,5 +25,7 @@ if __name__ == "__main__":
             log.info("Pipeline executado sem erros. Encerrando operação.")
         else:
             log.error("Pipeline concluído com falhas na entrega.")
+            sys.exit(1)
     else:
         log.error("Pipeline abortado na origem dos dados.")
+        sys.exit(1)
