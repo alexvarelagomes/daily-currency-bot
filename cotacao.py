@@ -4,7 +4,7 @@ from logger import obter_logger
 
 log = obter_logger(__name__)
 
-def buscar_cotacoes(tentativas=3, atraso=60) -> dict:
+def buscar_cotacoes(tentativas=3, atraso=10) -> dict:
 
     url = "https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL"
 
