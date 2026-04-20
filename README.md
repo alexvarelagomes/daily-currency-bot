@@ -1,4 +1,4 @@
-# Daily Currency Converter
+# Daily Currency Bot
 
 Um pipeline ETL (Extract, Transform, Load) leve e automatizado construído em Python. 
 O sistema extrai dados financeiros de uma API pública, formata as cotações e notifica o usuário diariamente via Telegram.
@@ -26,7 +26,7 @@ O fluxo de execução é direto e modularizado:
 
 Abaixo está a demonstração do pipeline em funcionamento, entregando o resumo financeiro diário:
 
-![Demonstração do Bot no Telegram](print_telegram.png)
+![Demonstração do Bot no Telegram](assets/print_telegram.png)
 
 ## ⚙️ Como Executar Localmente
 
