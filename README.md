@@ -27,4 +27,3 @@ O fluxo de execução é direto e modularizado:
 Abaixo está a demonstração do pipeline em funcionamento, entregando o resumo financeiro diário:
 
 ![Demonstração do Bot no Telegram](assets/print_telegram.png)
-
