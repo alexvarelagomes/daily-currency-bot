@@ -14,6 +14,10 @@ hg_api_key = os.getenv("HG_API_KEY")
 log = obter_logger(__name__)
 
 if __name__ == "__main__":
+    if not hg_api_key:
+        log.error("Chave de API da HG Brasil não encontrada. Verificar situação.")
+        sys.exit(1)
+
     valores_hoje = buscar_cotacoes(hg_api_key)
 
     if valores_hoje:
