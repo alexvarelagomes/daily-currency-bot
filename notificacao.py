@@ -1,5 +1,5 @@
 import requests
-from logger import obter_logger
+from utils.logger import obter_logger
 
 log = obter_logger(__name__)
 
