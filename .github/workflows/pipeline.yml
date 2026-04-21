@@ -29,5 +29,5 @@ jobs:
           # Injeta os segredos configurados no repositório diretamente no ambiente
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
-          HG_BRASIL_KEY: ${{ secrets.HG_API_KEY }}
+          HG_API_KEY: ${{ secrets.HG_API_KEY }}
         run: uv run main.py
