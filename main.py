@@ -3,7 +3,7 @@ from notificacao import enviar_telegram
 import os
 import sys
 from dotenv import load_dotenv
-from logger import obter_logger
+from utils.logger import obter_logger
 
 load_dotenv()
 
