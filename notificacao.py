@@ -9,9 +9,16 @@ def enviar_telegram(cotacoes: dict, token: str, chat_id: str) -> bool:
         log.warning("Nenhum dado recebido. Notificação cancelada.")
         return False
 
-    mensagem = "📊 *Resumo Financeiro Diário*\n\n"
+    mensagem = "📊 *Resumo Financeiro Diário:*\n\n"
+    mensagem += "Os valores abaixo são equivalentes ao real brasileiro (R$) e refletem as cotações atuais:\n\n"
+
     for moeda, valor in cotacoes.items():
-        mensagem += f"🔹 *{moeda}:* R$ {valor:.2f}\n"
+        if moeda == "Bitcoin":
+            mensagem += f"🔹 *{moeda}:* R$ {valor:,.0f}\n".replace(",", ".")
+        elif valor < 1:
+            mensagem += f"🔹 *{moeda}:* R$ {valor:.4f}\n"
+        else:
+            mensagem += f"🔹 *{moeda}:* R$ {valor:.2f}\n"
 
     # URL base da API do Telegram
     url = f"https://api.telegram.org/bot{token}/sendMessage"
