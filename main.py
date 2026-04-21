@@ -9,11 +9,12 @@ load_dotenv()
 
 token_telegram = os.getenv("TELEGRAM_BOT_TOKEN")
 chat_id = os.getenv("CHAT_ID")
+hg_api_key = os.getenv("HG_API_KEY")
 
 log = obter_logger(__name__)
 
 if __name__ == "__main__":
-    valores_hoje = buscar_cotacoes()
+    valores_hoje = buscar_cotacoes(hg_api_key)
 
     if valores_hoje:
         log.info("Extração concluída. Iniciando fase de entrega.")
