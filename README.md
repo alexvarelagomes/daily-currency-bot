@@ -28,7 +28,7 @@ Existem duas formas de interagir com este projeto:
 
 ### 1. Para Usuários Finais (Consumo de Dados)
 O bot publica o relatório financeiro automaticamente todos os dias às 11h. Para receber as cotações, basta ingressar no canal oficial de transmissão:
-👉 **[Link para o Canal do Telegram]** *(https://t.me/bot_cotacao)*
+https://t.me/bot_cotacao
 
 ### 2. Para Desenvolvedores (Fork e CI/CD)
 Se deseja rodar a sua própria instância deste pipeline:
