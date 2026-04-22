@@ -28,12 +28,12 @@ Existem duas formas de interagir com este projeto:
 
 ### 1. Para Usuários Finais (Consumo de Dados)
 O bot publica o relatório financeiro automaticamente todos os dias às 11h. Para receber as cotações, basta ingressar no canal oficial de transmissão no telegram:
-([@BOT_COTACAO](https://t.me/bot_cotacao))
+[@BOT_COTACAO](https://t.me/bot_cotacao)
 
 ### 2. Para Desenvolvedores (Fork e CI/CD)
 Se deseja rodar a sua própria instância deste pipeline:
 1. Faça um Fork deste repositório.
-2. Obtenha um Token de Bot no Telegram ([@BotFather](https://t.me/BotFather)) e uma API Key na [HG Brasil](https://hgbrasil.com/).
+2. Obtenha um Token de Bot no Telegram [@BotFather](https://t.me/BotFather) e uma API Key na [HG Brasil](https://hgbrasil.com/).
 3. No seu repositório, vá em **Settings > Secrets > Actions** e cadastre as chaves: `TELEGRAM_BOT_TOKEN`, `CHAT_ID` e `HG_API_KEY`.
 4. Ative os Workflows na aba **Actions**. A automação assumirá a execução diária.
 
