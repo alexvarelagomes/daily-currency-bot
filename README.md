@@ -30,12 +30,18 @@ Existem duas formas de interagir com este projeto:
 O bot publica o relatório financeiro automaticamente todos os dias às 11h. Para receber as cotações, basta ingressar no canal oficial de transmissão no telegram:
 [@BOT_COTACAO](https://t.me/bot_cotacao)
 
-### 2. Para Desenvolvedores (Fork e CI/CD)
+### 2. Para Desenvolvedores (Testes Locais e Deploy)
 Se deseja rodar a sua própria instância deste pipeline:
+
+**Para rodar localmente:**
+1. Clone este repositório e instale as dependências: `uv sync`.
+2. Crie um arquivo `.env` na raiz espelhando o `.env.example` e insira suas chaves de API (Telegram e HG Brasil).
+3. Execute o orquestrador: `uv run main.py`.
+
+**Para automação em Nuvem (CI/CD):**
 1. Faça um Fork deste repositório.
-2. Obtenha um Token de Bot no Telegram [@BotFather](https://t.me/BotFather) e uma API Key na [HG Brasil](https://hgbrasil.com/).
-3. No seu repositório, vá em **Settings > Secrets > Actions** e cadastre as chaves: `TELEGRAM_BOT_TOKEN`, `CHAT_ID` e `HG_API_KEY`.
-4. Ative os Workflows na aba **Actions**. A automação assumirá a execução diária.
+2. Acesse **Settings > Secrets > Actions** e cadastre as variáveis de ambiente: `TELEGRAM_BOT_TOKEN`, `CHAT_ID` e `HG_API_KEY`.
+3. Na aba **Actions**, habilite a execução dos workflows. A nuvem assumirá o agendamento Cron.
 
 ## Prova de Execução
 
