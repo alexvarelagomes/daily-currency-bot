@@ -27,7 +27,7 @@ O fluxo de execução é direto e modularizado:
 Existem duas formas de interagir com este projeto:
 
 ### 1. Para Usuários Finais (Consumo de Dados)
-O bot publica o relatório financeiro automaticamente todos os dias às 11h. Para receber as cotações, basta ingressar no canal oficial de transmissão:
+O bot publica o relatório financeiro automaticamente todos os dias às 11h. Para receber as cotações, basta ingressar no canal oficial de transmissão no telegram:
 https://t.me/bot_cotacao
 
 ### 2. Para Desenvolvedores (Fork e CI/CD)
