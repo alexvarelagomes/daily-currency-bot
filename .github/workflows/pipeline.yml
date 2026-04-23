@@ -2,8 +2,8 @@ name: Pipeline Cotacoes
 
 on:
   schedule:
-    # Roda de segunda a sexta às 14h UTC (11h no Horário de Brasília).
-    - cron: "0 14 * * 1-5"
+    # Roda de segunda a sexta entre 8h e 10h UTC (Horário de Brasília).
+    - cron: "0 11 * * 1-5"
   workflow_dispatch: # Permite um botão de "Play" manual na interface do GitHub
 
 jobs:
@@ -30,4 +30,5 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
           HG_API_KEY: ${{ secrets.HG_API_KEY }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: uv run main.py
