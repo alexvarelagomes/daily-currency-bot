@@ -1,5 +1,6 @@
 import requests
 from utils.logger import obter_logger
+import datetime
 
 log = obter_logger(__name__)
 
@@ -9,8 +10,9 @@ def enviar_telegram(cotacoes: dict, token: str, chat_id: str) -> bool:
         log.warning("Nenhum dado recebido. Notificação cancelada.")
         return False
 
-    mensagem = "📊 *Resumo Financeiro Diário:*\n\n"
-    mensagem += "Os valores abaixo são equivalentes ao real brasileiro (R$) e refletem as cotações atuais:\n\n"
+    mensagem = "📊 *Resumo Financeiro Diário*\n"
+    mensagem += f"📅 *Data:* {datetime.datetime.now().strftime('%d/%m/%Y')}\n" 
+    mensagem += "💱 *Moeda Base:* BRL (R$)\n\n"
 
     for moeda, valor in cotacoes.items():
         if moeda == "Bitcoin":
